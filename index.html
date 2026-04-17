@@ -1,70 +1,65 @@
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda seu carro.</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="conteiner">
-        <header class="cabecalho">
-            <h3>Cadestre seu veiculo para vender mais rapido</h3>
-        </header>
-        <div class="form-container">
-            <div class="form-header"></div>
-                <p>Formulário</p>
-            <div class="form-body">
-                <h1 class="form-titulo">Venda fácil seu carro</h1>
-                <p>Descreva as caracteristicas do seu carro e marque os opcionais que ele possui</p>
-                <form>
-                    <div class="caixaInputs"></div>
-                        <label for="title">Titulo do anuncio
-                            <span class="campo-obrigatorio">*</span></label>
-                            <input type="text" name="title" id="title" class="block" placeholder="Digite seu titulo" minlength="1" maxlength="30" required>
-               </div>
-                <div class="caixaInputs"></div>
-                            <label for="preco">Preço
-                                <span class="campo-obrigatorio">*</span></label>
-                                <input type="number" name="preco" id="preco" class="block" placeholder="Digite o preço" minlength="1" maxlength="30" required>
-                </div>
-                <div class="caixaInputs">
-                            <label for="descricao">Descrição
-                                </label><textarea name="descricao" id="descricao" class="block" placeholder="Digite a descrição do seu carro" minlength="1" maxlength="30" required></textarea>
-                </div>
-                <div class="caixaInputs"></div>
-                            <label for="modelo">Modelo
-                                <span class="campo-obrigatorio">*</span></label>
-                                <input type="text" name="modelo" id="modelo" class="block" placeholder="Digite o madelo do carro" minlength="1" maxlength="30" required>
-                </div>
-                <div class="caixaInputs"></div>
-                            <label for="marca">Marca
-                                <span class="campo-obrigatorio">*</span></label>
-                                <input type="text" name="marca" id="marca" class="block" placeholder="Digite a marca do carro" minlength="1" maxlength="30" required>
-                </div>
-                <div class="caixaInputs"></div>
-                            <label for="kilometragem">Kilometragem
-                                <span class="campo-obrigatorio">*</span></label>
-                                <input type="number" name="kilometragem" id="kilometragem" class="block" placeholder="Digite a Kilometragem" minlength="1" maxlength="30" required>
-                </div>
-                <div class="caixaInputs"></div>
-                            <label for="ano">Ano
-                                <span class="campo-obrigatorio">*</span></label>
-                                <input type="date" name="ano" id="ano" class="block" minlength="1" maxlength="30" required>
-                </div>
-               <div class="caixaInput">
-                            <p>Tipo de Cambio</p>
-                            <span class="campo-obrigatorio">*</span>
-                            <input type="radio" name="marcha" id="auto">
-                            <label for="auto">Automático</label>
-                            <span class="campo-obrigatorio">*</span>
-                            <input type="radio" name="marcha" id="manual">
-                            <label for="manual">Manual</label>
-               </div>
-             </form>
-        </div>
-                
-    </div>
-</body>
-</html>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f0ebf8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+p, label {
+    color: #444;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+input[type="text"], input[type="number"], input[type="date"], input[type="file"], textarea {
+    width: 400px;
+}
+
+textarea {
+    padding: 10px 5px;
+}
+
+.cabecalho {
+    height: 160px;
+    padding: 20px;
+    background-color: #673ab7;
+}
+
+.cabecalho h3 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.form-container {
+    background-color: #fdfdfd;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    top: -46px;
+}
+
+.form-header {
+    border-bottom: 1px solid #dfdfdf;
+    height: 45px;
+}
+
+.form-header p {
+    color: #673ab7;
+    border-bottom: 2px solid #673ab7;
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    height: 45px;
+    line-height: 45px;
+}
