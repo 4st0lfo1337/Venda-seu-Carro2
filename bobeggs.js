@@ -1,6 +1,5 @@
-const { createElement } = require("react");
-
 function salvarCarros(event) {
+    //impedir de recarregar a página
     event.preventDefault();
 
     let titulo = document.getElementById('title').value;
@@ -9,23 +8,14 @@ function salvarCarros(event) {
     let modelo = document.getElementById('modelo').value;
 
     let cambioSelecionado = document.querySelector('input[name="marcha"]:checked');
-    let cambio = cambioSelecionado ? cambioSelecionado.value : "Não informado";
 
-    let lista = document.getElementById('listarCarros');
+    let cambio = cambioSelecionado ? cambioSelecionado.id : "Não informado";
 
-    let card = document.createElement('div');
-
-    card.style.border = "1px solid #ccc";
-    card.style.padding = "10px";
-    card.style.marginBottom = "10px";
-
-    lista.appendChild(card);
-
-    let carro = {
-        titulo: titulo.value,
-        preco: preco.value,
-        marca: marca.value,
-        modelo: modelo.value,
+        let carro = {
+        titulo,
+        preco,
+        marca,
+        modelo, 
         cambio
     };
 
@@ -39,12 +29,12 @@ function salvarCarros(event) {
 }
 
 function adicionarNaTela(carro) {
-    let lista = document.getElementById('listacarros');
+    let lista = document.getElementById('listarCarros');
     let card = document.createElement('div');
     card.classList.add('card');
 
     card.innerHTML = `
-    <h3>${carro.titulo}<h3>
+    <h3>${carro.titulo}</h3>
     <p><strong>Preço:</strong> R$ ${carro.preco}</p>
     <p><strong>Marca:</strong> ${carro.marca}</p>
     <p><strong>Modelo:</strong> ${carro.modelo}</p>
@@ -52,5 +42,12 @@ function adicionarNaTela(carro) {
     `;
 
     lista.appendChild(card);
-    
+}
+
+window.onload = function () {
+    let carros = JSON.parse(localStorage.getItem("carros")) || [];
+
+    carros.forEach(carro => {
+        adicionarNaTela(carro);
+    });
 }
